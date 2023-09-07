@@ -1,0 +1,26 @@
+import numpy
+
+f = lambda x :x**2 - 2
+
+xl = input("Enter lower limit..: ")
+xu = input("Enter higher limit..: ")
+
+xu = float(xu)
+xl = float(xl)
+
+xr = (xu + xl) /2
+i = 0
+
+while numpy.abs(f(xr))>0.000001:
+    i = i + 1
+    if f(xl) * f(xr) < 0:
+        xu = xr
+        xr = (xu + xl) / 2
+    elif f(xl) * f(xr) > 0:
+        xl = xr
+        xr = (xu + xl) / 2
+    else:
+        print(xr, " is the root!..")
+
+print("The root is..: ", xr)
+print("The solution took ", i, " iterations to converge!")
