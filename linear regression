@@ -1,0 +1,29 @@
+import numpy
+
+x = numpy.array([[1],[2],[3],[4],[5],[6],[7]])
+y = numpy.array([[0.5],[2.5],[2],[4],[3.5],[6],[5.5]])
+
+'''print(numpy.mean(x))
+print(len(x))'''
+
+sumxy = 0
+sumx2 = 0
+for index in range(len(x)):
+    sumxy = sumxy + x[index]*y[index]
+    sumx2 = sumx2 + x[index]*x[index]
+sumx=sum(x)
+sumy=sum(y)
+
+a1 = (len(x)*sumxy - sumx*sumy)/(len(x)*sumx2-sumx*sumx)
+
+a0 = numpy.mean(y) - a1 * numpy.mean(x)
+
+'''print(len(x))
+print(sumxy)
+print(sumx)
+print(sumy)
+print(sumx2)
+print(sumx*sumx)
+print(a1)'''
+
+print(a0, " + ", a1, "x")
