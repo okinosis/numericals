@@ -2,11 +2,8 @@ import numpy
 
 f = lambda x :x**2 - 2
 
-xl = input("Enter lower limit..: ")
-xu = input("Enter higher limit..: ")
-
-xu = float(xu)
-xl = float(xl)
+xl = float(input("Enter lower limit..: "))
+xu = float(input("Enter higher limit..: "))
 
 xr = (xu + xl) /2
 i = 0
