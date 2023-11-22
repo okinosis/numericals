@@ -1,0 +1,16 @@
+a = 0
+b = 0.8
+n = 4
+#Number of evenly spaced grid points. NOT the number of segments.
+# Also number of segments must be multiples of 3.
+
+h = (b - a) / (n - 1)
+x = np.linspace(a, b, n)
+
+# Function to be integrated:
+f = 0.2 + 25*x -200*np.power(x,2) + 675*np.power(x,3) \
+    - 900*np.power(x,4) + 400*np.power(x,5)
+
+I_simp38 = (3*h/8) * (f[0]+3*sum(f[1:n-1:]))
+
+# sum(f[1:n-1:2])
