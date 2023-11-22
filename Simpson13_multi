@@ -1,0 +1,14 @@
+import numpy  as np
+
+a = 0
+b = 0.8
+n = 5#Number of evenly spaced grid points. NOT the number of segments.
+h = (b - a) / (n - 1)
+x = np.linspace(a, b, n)
+
+# Function to be integrated:
+f = 0.2 + 25*x -200*np.power(x,2) + 675*np.power(x,3) \
+    - 900*np.power(x,4) + 400*np.power(x,5)
+I_simp = (h/3) * (f[0] + 4*sum(f[1:n-1:2]) + 2*sum(f[2:n-2:2]) + f[n-1])
+
+print(I_simp)
