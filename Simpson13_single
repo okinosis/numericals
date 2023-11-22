@@ -1,0 +1,20 @@
+import numpy  as np
+
+# Function to be integrated:
+f = lambda x: 0.2 + 25*x -200*np.power(x,2) + 675*np.power(x,3) - 900*np.power(x,4) + 400*np.power(x,5)
+
+# Determine the interval:
+a = 0
+b = 0.8
+
+# Calculate "h" value:
+h = (b - a) / 2
+
+# Apply the one-step formula (although the method itself takes the
+# integral in two steps!)
+I = h * (f(a)+4*f((b-a)/2)+f(b))/3
+
+'''print(f(0))
+print(f((b-a)/2))
+print(f(0.8))'''
+print(I)
